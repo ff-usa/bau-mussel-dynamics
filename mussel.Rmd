@@ -20,7 +20,7 @@ str(population)
 ```{r,}
 plot(population$R1,
      type='b', col='blue',
-     xlab='', ylab='Population', xlim=c(1,12), xaxt='n')
+     xlab='', xlim=c(1,12), xaxt='n')
 axis(1, at=seq(1,12), population$Month, las=2, cex.axis = 0.7)
 
 ```
