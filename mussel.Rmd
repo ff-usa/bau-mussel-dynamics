@@ -59,4 +59,17 @@ plot(population$R3,
 axis(1, at=seq(1,12), population$Month, las=2)
 
 ```
+### Water quality
+
+```{r}
+water=read.csv("data/water-quality.csv")
+str(water)
+
+plot(water$Depth, mean,
+     type='b', col='blue',
+     xlab='', ylab='Population /m^2', xlim=c(1,12), xaxt='n')
+```
+
+
+
 ### End
