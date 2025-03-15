@@ -66,8 +66,16 @@ water=read.csv("data/water-quality.csv")
 str(water)
 
 plot(water$Depth, mean/A,
-     type='b', col='blue',
+     type='p', col='blue',
      xlab='Depth (m)', ylab='Population / m^2')
+
+plot(water$Temperature, mean/A,
+     type='p', col='blue',
+     xlab='Temperature °C', ylab='Population / m^2')
+
+plot(water$pH, mean/A,
+     type='p', col='blue',
+     xlab='pH', ylab='Population / m^2')
 ```
 
 
