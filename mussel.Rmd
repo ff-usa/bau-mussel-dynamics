@@ -65,9 +65,9 @@ axis(1, at=seq(1,12), population$Month, las=2)
 water=read.csv("data/water-quality.csv")
 str(water)
 
-plot(water$Depth, mean,
+plot(water$Depth, mean/A,
      type='b', col='blue',
-     xlab='', ylab='Population /m^2', xlim=c(1,12), xaxt='n')
+     xlab='Depth (m)', ylab='Population / m^2')
 ```
 
 
@@ -75,24 +75,26 @@ plot(water$Depth, mean,
 ```{r}
 library(ggplot2)
 
-df= data.frame(Month=water$Month, Depth=water$Depth,
+# Month needs to be factorized to facilitate plotting and preserve order
+Month1=factor(water$Month, levels=water$Month)
+df= data.frame(Month=Month1, Depth=water$Depth,
                Temperature=water$Temperature, pH=water$Temperature, mean=mean/A)
 
-# ggplot(data = df, aes(x = seq(1,12))) +
-ggplot(data = df, aes(x = Month)) +
+ggplot(data = df, aes(x = Month, group = 1)) +
   geom_line(aes(y = mean, color = "black"), linewidth = 1.3) +
-  #geom_point(aes(y = mean, color = "black"), shape=1, size=3) +
+  geom_point(aes(y = mean, color = "black"), shape=1, size=3) +
   
   geom_line(aes(y = Temperature / 6, color = "blue"), linewidth = 1.3) +
-  # geom_point(aes(y = Temperature / 6, color = "blue"), shape=1, size=3) +
-  
-  # scale_x_discrete(labels = df$Month) +
+  geom_point(aes(y = Temperature / 6, color = "blue"), shape=1, size=3) +
+
   scale_y_continuous(name = "Population / m^2",
-                     sec.axis = sec_axis(transform = ~ . * 6, name = "Temperature")) +
+                     sec.axis = sec_axis(transform = ~ . * 6, name = "Temperature °C")) +
   scale_color_manual('', labels= c('Population / m^2','Temperature °C'),
                      values = c("black", "blue")) +
   theme_bw() +
-  theme(legend.position = "top")
+  theme(legend.position = "top", axis.text.x= element_text(size=11, angle = 90, vjust = 0.5),
+        axis.text.y.right= element_text(size=11, color='blue'),
+        axis.title.y.right = element_text(color='blue'))
 
 
 ```
