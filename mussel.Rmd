@@ -72,4 +72,30 @@ plot(water$Depth, mean,
 
 
 
+```{r}
+library(ggplot2)
+
+df= data.frame(Month=water$Month, Depth=water$Depth,
+               Temperature=water$Temperature, pH=water$Temperature, mean=mean/A)
+
+# ggplot(data = df, aes(x = seq(1,12))) +
+ggplot(data = df, aes(x = Month)) +
+  geom_line(aes(y = mean, color = "black"), linewidth = 1.3) +
+  #geom_point(aes(y = mean, color = "black"), shape=1, size=3) +
+  
+  geom_line(aes(y = Temperature / 6, color = "blue"), linewidth = 1.3) +
+  # geom_point(aes(y = Temperature / 6, color = "blue"), shape=1, size=3) +
+  
+  # scale_x_discrete(labels = df$Month) +
+  scale_y_continuous(name = "Population / m^2",
+                     sec.axis = sec_axis(transform = ~ . * 6, name = "Temperature")) +
+  scale_color_manual('', labels= c('Population / m^2','Temperature °C'),
+                     values = c("black", "blue")) +
+  theme_bw() +
+  theme(legend.position = "top")
+
+
+```
+
+
 ### End
