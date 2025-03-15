@@ -72,23 +72,29 @@ plot(water$Depth, mean/A,
 
 
 
+
+### Temperature
+
 ```{r}
 library(ggplot2)
 
 # Month needs to be factorized to facilitate plotting and preserve order
 Month1=factor(water$Month, levels=water$Month)
 df= data.frame(Month=Month1, Depth=water$Depth,
-               Temperature=water$Temperature, pH=water$Temperature, mean=mean/A)
+               Temperature=water$Temperature, pH=water$pH, mean=mean/A)
+
+
+scale=6
 
 ggplot(data = df, aes(x = Month, group = 1)) +
   geom_line(aes(y = mean, color = "black"), linewidth = 1.3) +
   geom_point(aes(y = mean, color = "black"), shape=1, size=3) +
   
-  geom_line(aes(y = Temperature / 6, color = "blue"), linewidth = 1.3) +
-  geom_point(aes(y = Temperature / 6, color = "blue"), shape=1, size=3) +
+  geom_line(aes(y = Temperature / scale, color = "blue"), linewidth = 1.3) +
+  geom_point(aes(y = Temperature / scale, color = "blue"), shape=1, size=3) +
 
   scale_y_continuous(name = "Population / m^2",
-                     sec.axis = sec_axis(transform = ~ . * 6, name = "Temperature °C")) +
+                     sec.axis = sec_axis(transform = ~ . * scale, name = "Temperature °C")) +
   scale_color_manual('', labels= c('Population / m^2','Temperature °C'),
                      values = c("black", "blue")) +
   theme_bw() +
@@ -98,6 +104,54 @@ ggplot(data = df, aes(x = Month, group = 1)) +
 
 
 ```
+
+
+### Depth
+
+```{r}
+scale=1
+ggplot(data = df, aes(x = Month, group = 1)) +
+  geom_line(aes(y = mean, color = "black"), linewidth = 1.3) +
+  geom_point(aes(y = mean, color = "black"), shape=1, size=3) +
+  
+  geom_line(aes(y = Depth / scale, color = "blue"), linewidth = 1.3) +
+  geom_point(aes(y = Depth / scale, color = "blue"), shape=1, size=3) +
+
+  scale_y_continuous(name = "Population / m^2",
+                     sec.axis = sec_axis(transform = ~ . * scale, name = "Depth")) +
+  scale_color_manual('', labels= c('Population / m^2','Depth'),
+                     values = c("black", "blue")) +
+  theme_bw() +
+  theme(legend.position = "top", axis.text.x= element_text(size=11, angle = 90, vjust = 0.5),
+        axis.text.y.right= element_text(size=11, color='blue'),
+        axis.title.y.right = element_text(color='blue'))
+
+```
+
+
+### pH
+
+```{r}
+scale=2
+ggplot(data = df, aes(x = Month, group = 1)) +
+  geom_line(aes(y = mean, color = "black"), linewidth = 1.3) +
+  geom_point(aes(y = mean, color = "black"), shape=1, size=3) +
+  
+  geom_line(aes(y = pH / scale, color = "blue"), linewidth = 1.3) +
+  geom_point(aes(y = pH / scale, color = "blue"), shape=1, size=3) +
+
+  scale_y_continuous(name = "Population / m^2",
+                     sec.axis = sec_axis(transform = ~ . * scale, name = "pH")) +
+  scale_color_manual('', labels= c('Population / m^2','pH'),
+                     values = c("black", "blue")) +
+  theme_bw() +
+  theme(legend.position = "top", axis.text.x= element_text(size=11, angle = 90, vjust = 0.5),
+        axis.text.y.right= element_text(size=11, color='blue'),
+        axis.title.y.right = element_text(color='blue'))
+
+```
+
+
 
 
 ### End
