@@ -7,7 +7,6 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-
 ### Load data
 
 ```{r}
@@ -17,7 +16,7 @@ str(population)
 
 ### Plot data
 
-```{r,}
+```{r}
 plot(population$R1,
      type='b', col='blue',
      xlab='', xlim=c(1,12), xaxt='n')
@@ -25,5 +24,19 @@ axis(1, at=seq(1,12), population$Month, las=2, cex.axis = 0.7)
 
 ```
 
+```{r}
+plot(population$R2,
+     type='b', col='blue',
+     xlab='', xlim=c(1,12), xaxt='n')
+axis(1, at=seq(1,12), population$Month, las=2, cex.axis = 0.7)
 
+```
+
+```{r}
+plot(population$R3,
+     type='b', col='blue',
+     xlab='', xlim=c(1,12), xaxt='n')
+axis(1, at=seq(1,12), population$Month, las=2, cex.axis = 0.7)
+
+```
 ### End
