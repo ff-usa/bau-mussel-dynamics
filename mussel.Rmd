@@ -186,6 +186,20 @@ ggscatter(df, x = "Depth", y = "mean",
           xlab = "Depth (meter)", ylab = "Population / m^2")
 ```
 
+```{r}
+library("ggpubr")
+ggscatter(df, x = "Temperature", y = "mean",
+          add = "reg.line", conf.int = TRUE,
+          cor.coef = TRUE, cor.method = "pearson",
+          xlab ="Temperature (C)", ylab = "Population / m^2")
+```
 
+```{r}
+library("ggpubr")
+ggscatter(df, x = "pH", y = "mean",
+          add = "reg.line", conf.int = TRUE,
+          cor.coef = TRUE, cor.method = "pearson",
+          xlab = "pH", ylab = "Population / m^2")
+```
 
 ### End
