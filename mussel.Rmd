@@ -25,7 +25,7 @@ A=5
 # 1st quadrat
 plot(population$R1/A,
      type='l', col='blue',
-     xlab='', ylab='Population /m^2', xlim=c(1,12), xaxt='n')
+     xlab='', ylab='Population / m^2', xlim=c(1,12), xaxt='n')
 
 # 2nd quadrat
 lines(population$R2/A, type='l', col='red')
@@ -159,6 +159,21 @@ ggplot(data = df, aes(x = Month, group = 1)) +
 
 ```
 
+
+
+### Correlation
+
+Reference: https://www.sthda.com/english/wiki/correlation-test-between-two-variables-in-r#compute-correlation-in-r
+
+
+```{r}
+for (i in colnames(df)[2:4]) {
+  print(i)
+  print(cor.test(df[[i]], mean))
+  cat(sprintf('\n'))
+}
+
+```
 
 
 
