@@ -201,5 +201,41 @@ ggscatter(df, x = "pH", y = "mean",
           cor.coef = TRUE, cor.method = "pearson",
           xlab = "pH", ylab = "Population / m^2")
 ```
+---
+ title: "biometric-characteristics"
+ output: html_document
+ ---
+ ```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+ 
+ ### Load data
+ 
+```{r}
+bio= read.csv('data/shell-biometrics.csv')
+str(bio)
+``` 
+ 
+ ### Normality test
+ 
+####Length
+ 
+```{r}
+shapiro.test(bio$Shell_Length_mm)
+ggqqplot(bio$Shell_Width_mm, ylab = "Length")
+```
+###Height
+```{r}
+shapiro.test(bio$Shell_Height_mm)
+ggqqplot(bio$Shell_Width_mm, ylab = "Height")
+```
+###Width
+```{r}
+shapiro.test(bio$Shell_Width_mm)
+ggqqplot(bio$Shell_Width_mm, ylab = "Width")
+```
+
+
+
 
 ### End
