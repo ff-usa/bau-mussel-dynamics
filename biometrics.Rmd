@@ -1,0 +1,34 @@
+---
+title: "biometric-characteristics"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Load data
+
+```{r}
+bio= read.csv('data/shell-biometrics.csv')
+str(bio)
+```
+
+
+### Normality test
+
+```{r}
+library("ggpubr")
+```
+
+#### Length
+
+```{r}
+shapiro.test(bio$Shell_Length_mm)
+ggqqplot(bio$Shell_Width_mm, ylab = "Length")
+```
+
+### Width
+
+
+### Height
