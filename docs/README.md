@@ -1,14 +1,19 @@
 # bau-mussel-dynamics
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14996735.svg)](https://doi.org/10.5) [![R](https://img.shields.io/badge/R-4.4.2-green.svg)]()
+
+### Description
+
 (This webpage will be completed after finalizing the manuscript)
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14996735.svg)](https://doi.org/10.5281/zenodo.14996735)
-
-Freshwater pearl mussel population dynamics data by Bangladesh Agricultural University
-
-https://doi.org/10.5281/zenodo.14996735
-
 Webpage: https://ff-usa.github.io/bau-mussel-dynamics/
+
+### Citation
+
+If you use this data, please cite as below:
+
+Fouzia Fariha, Tashrif Billah, Bishjiet Chandro, Md. Masud Rana, Md. Jasim Uddin, Freshwater pearl mussel population dynamics data by Bangladesh Agricultural University, 2024, DOI: 10.5281/zenodo.14996735
+
 
 ### Study site
 
