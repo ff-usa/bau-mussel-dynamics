@@ -17,7 +17,7 @@ Webpage: https://ff-usa.github.io/bau-mussel-dynamics/
 Study site in Mymensingh, Bangladesh. Map was generated using Microsoft Excel, Microsoft Paint, and OpenStreetMap (https://www.openstreetmap.org/copyright)
 
 
-### Monthly population variation in quadrats i\sub{1}, i\sub{2}, i\sub{3}
+### Monthly population variation in quadrats i<sub>1<\sub>, i<sub>2<\sub>, i<sub>3<\sub>
 
 ![](population.png)
 
