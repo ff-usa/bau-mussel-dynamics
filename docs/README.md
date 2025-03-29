@@ -31,6 +31,11 @@ Fouzia Fariha, Tashrif Billah, Bishjiet Chandro, Md. Masud Rana, Md. Jasim Uddin
 
 Study site in Mymensingh, Bangladesh. Map was generated using Microsoft Excel, Microsoft Paint, and OpenStreetMap (https://www.openstreetmap.org/copyright)
 
+![](pond_annot.png)
+
+Culture pond and quadrats
+
+
 ---
 
 ### Monthly population variation of freshwater pearl mussel
