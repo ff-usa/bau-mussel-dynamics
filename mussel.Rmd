@@ -32,7 +32,7 @@ legend('top', legend=c('Mean'), col=c('black'),
 
 grid()
 axis(1, at=seq(1,12), population$Month, las=2, cex.axis = 1)
-title('Monthly variation in population density of L. marginalis')
+# title('Monthly variation in population density of L. marginalis')
 
 ```
 ```{r}
