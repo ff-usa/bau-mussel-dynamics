@@ -236,7 +236,17 @@ mean(water$Depth)
 ```{r}
 sd(water$Depth)
 ```
-`
+### Analyze quadrat samples using Mann-Whitney U test
 
+```{r}
+wilcox.test(population$R1, population$R2)
+```
+```{r}
+wilcox.test(population$R2, population$R3)
+```
+
+```{r}
+wilcox.test(population$R3, population$R1)
+```
 
 ### End
