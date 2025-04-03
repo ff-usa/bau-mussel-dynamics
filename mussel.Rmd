@@ -241,6 +241,7 @@ sd(water$Depth)
 ```{r}
 wilcox.test(population$R1, population$R2)
 ```
+
 ```{r}
 wilcox.test(population$R2, population$R3)
 ```
