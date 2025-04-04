@@ -248,5 +248,11 @@ wilcox.test(population$R2, population$R3)
 ```{r}
 wilcox.test(population$R3, population$R1)
 ```
+```{r}
+for (w in c('Depth','Temperature','pH')) {
+  arr=water[[w]]
+  cat(sprintf('%s - Mean: %f, min: %f, max: %f\n', w, mean(arr), min(arr), max(arr)))
+}
+```
 
 ### End
