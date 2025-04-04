@@ -24,11 +24,10 @@ mean= (population$R1+ population$R2+ population$R3)/3
 A=5
 # 1st quadrat
 plot(mean/A,
-     type='b', col='black',
-     xlab='', ylab='Population / m^2', xlim=c(1,12), xaxt='n')
+     type='b', col='blue',
+     xlab='', ylab='Population / m^2', xlim=c(1,12), xaxt='n', lwd=2)
 
-legend('top', legend=c('Mean'), col=c('black'),
-       lwd=c(3), lty=1)
+#legend('top', legend=c('Mean'), col=c('blue'), lwd=c(3), lty=1)
 
 grid()
 axis(1, at=seq(1,12), population$Month, las=2, cex.axis = 1)
