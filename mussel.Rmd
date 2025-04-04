@@ -159,7 +159,7 @@ Reference: https://www.sthda.com/english/wiki/correlation-test-between-two-varia
 ```{r}
 for (i in colnames(df)[2:4]) {
   print(i)
-  print(cor.test(df[[i]], mean))
+  print(cor.test(df[[i]], mean, method='spearman'))
   cat(sprintf('\n'))
 }
 
@@ -172,7 +172,7 @@ for (i in colnames(df)[2:4]) {
 library("ggpubr")
 ggscatter(df, x = "Depth", y = "mean",
           add = "reg.line", conf.int = TRUE,
-          cor.coef = TRUE, cor.method = "pearson",
+          cor.coef = TRUE, cor.method = "spearman",
           xlab = "Depth (meter)", ylab = "Population / m^2")
 ```
 
@@ -180,7 +180,7 @@ ggscatter(df, x = "Depth", y = "mean",
 library("ggpubr")
 ggscatter(df, x = "Temperature", y = "mean",
           add = "reg.line", conf.int = TRUE,
-          cor.coef = TRUE, cor.method = "pearson",
+          cor.coef = TRUE, cor.method = "spearman",
           xlab ="Temperature (C)", ylab = "Population / m^2")
 ```
 
@@ -188,7 +188,7 @@ ggscatter(df, x = "Temperature", y = "mean",
 library("ggpubr")
 ggscatter(df, x = "pH", y = "mean",
           add = "reg.line", conf.int = TRUE,
-          cor.coef = TRUE, cor.method = "pearson",
+          cor.coef = TRUE, cor.method = "spearman",
           xlab = "pH", ylab = "Population / m^2")
 ```
  
@@ -201,22 +201,22 @@ str(bio)
  
 ### Normality test
  
-#### Length
- 
-```{r}
-shapiro.test(bio$Shell_Length_mm)
-ggqqplot(bio$Shell_Width_mm, ylab = "Length")
-```
-###Height
-```{r}
-shapiro.test(bio$Shell_Height_mm)
-ggqqplot(bio$Shell_Width_mm, ylab = "Height")
-```
-###Width
-```{r}
-shapiro.test(bio$Shell_Width_mm)
-ggqqplot(bio$Shell_Width_mm, ylab = "Width")
-```
+<!-- #### Length -->
+<!-- ```{r} -->
+<!-- shapiro.test(bio$Shell_Length_mm) -->
+<!-- ggqqplot(bio$Shell_Width_mm, ylab = "Length") -->
+<!-- ``` -->
+<!-- ###Height -->
+<!-- ```{r} -->
+<!-- shapiro.test(bio$Shell_Height_mm) -->
+<!-- ggqqplot(bio$Shell_Width_mm, ylab = "Height") -->
+<!-- ``` -->
+<!-- ###Width -->
+<!-- ```{r} -->
+<!-- shapiro.test(bio$Shell_Width_mm) -->
+<!-- ggqqplot(bio$Shell_Width_mm, ylab = "Width") -->
+<!-- ``` -->
+
 ```{r}
 mean(water$Temperature)
 ```
@@ -238,7 +238,7 @@ sd(water$Depth)
 ### Analyze quadrat samples using Mann-Whitney U test
 
 ```{r}
-wilcox.test(population$R1, population$R2)
+wilcox.test(population$R1, population$R2, exact=FALSE, correct=FALSE)
 ```
 
 ```{r}
