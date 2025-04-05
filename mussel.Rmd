@@ -182,16 +182,19 @@ ggscatter(df, x = "Depth", y = "mean",
 library("ggpubr")
 ggscatter(df, x = "Temperature", y = "mean",
           add = "reg.line", conf.int = TRUE,
-          cor.coef = TRUE, cor.method = "spearman",
-          xlab ="Temperature (C)", ylab = "Population / m^2")
+          cor.coef = FALSE, cor.method = "spearman",
+          xlab = "Temperature (C)", ylab = "Population / m^2",
+          title = 'B') +
+  stat_cor(cor.coef.name = 'rho', label.x=21.6, label.y=3.4)
 ```
-
 ```{r}
 library("ggpubr")
 ggscatter(df, x = "pH", y = "mean",
           add = "reg.line", conf.int = TRUE,
-          cor.coef = TRUE, cor.method = "spearman",
-          xlab = "pH", ylab = "Population / m^2")
+          cor.coef = FALSE, cor.method = "spearman",
+          xlab = "pH", ylab = "Population / m^2",
+          title = 'C') +
+  stat_cor(cor.coef.name = 'rho', label.x=7, label.y=3.5)
 ```
  
 ### Load data
