@@ -238,7 +238,7 @@ sd(water$Depth)
 ### Analyze quadrat samples using Mann-Whitney U test
 
 ```{r}
-wilcox.test(population$R1, population$R2, exact=FALSE, correct=FALSE)
+wilcox.test(population$R1, population$R2)
 ```
 
 ```{r}
