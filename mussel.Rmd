@@ -174,7 +174,8 @@ ggscatter(df, x = "Depth", y = "mean",
           add = "reg.line", conf.int = TRUE,
           xlab = "Depth (m)", ylab = "Population / m^2",
           title = 'A') +
-  stat_cor(cor.coef.name = 'rho', label.x=1.5, label.y=2.8, method='spearman', size=5)
+  stat_cor(cor.coef.name = 'rho', label.x=1.5, label.y=2.8,method='spearman',
+           size=5, p.accuracy=0.001)
 ```
 
 ```{r}
@@ -183,7 +184,8 @@ ggscatter(df, x = "Temperature", y = "mean",
           add = "reg.line", conf.int = TRUE,
           xlab = "Temperature (°C)", ylab = "Population / m^2",
           title = 'B') +
-  stat_cor(cor.coef.name = 'rho', label.x=20, label.y=3.4, method='spearman', size=5)
+  stat_cor(cor.coef.name = 'rho', label.x=20, label.y=3.4, method='spearman',
+           size=5, p.accuracy=0.001)
 ```
 ```{r}
 library("ggpubr")
@@ -191,7 +193,8 @@ ggscatter(df, x = "pH", y = "mean",
           add = "reg.line", conf.int = TRUE,
           xlab = "pH", ylab = "Population / m^2",
           title = 'C') +
-  stat_cor(cor.coef.name = 'rho', label.x=6.9, label.y=3.4, method='spearman', size=5)
+  stat_cor(cor.coef.name = 'rho', label.x=6.9, label.y=3.4, method='spearman',
+           size=5, p.accuracy=0.001)
 ```
  
 ### Load data
