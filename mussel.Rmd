@@ -173,7 +173,8 @@ library("ggpubr")
 ggscatter(df, x = "Depth", y = "mean",
           add = "reg.line", conf.int = TRUE,
           cor.coef = TRUE, cor.method = "spearman",
-          xlab = "Depth (meter)", ylab = "Population / m^2")
+          xlab = "Depth (m)", ylab = "Population / m^2",
+          title = 'A', cor.coef.coord = c(1.6,2.6))
 ```
 
 ```{r}
