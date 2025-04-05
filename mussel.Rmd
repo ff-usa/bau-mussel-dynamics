@@ -174,7 +174,7 @@ ggscatter(df, x = "Depth", y = "mean",
           add = "reg.line", conf.int = TRUE,
           xlab = "Depth (m)", ylab = "Population / m^2",
           title = 'A') +
-  stat_cor(cor.coef.name = 'rho', label.x=1.5, label.y=2.8,method='spearman',
+  stat_cor(cor.coef.name = 'rho', label.x=1.5, label.y=2.8, method='spearman',
            size=5, p.accuracy=0.001)
 ```
 
