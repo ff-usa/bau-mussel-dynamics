@@ -172,9 +172,10 @@ for (i in colnames(df)[2:4]) {
 library("ggpubr")
 ggscatter(df, x = "Depth", y = "mean",
           add = "reg.line", conf.int = TRUE,
-          cor.coef = TRUE, cor.method = "spearman",
+          cor.coef = FALSE, cor.method = "spearman",
           xlab = "Depth (m)", ylab = "Population / m^2",
-          title = 'A', cor.coef.coord = c(1.6,2.6))
+          title = 'A') +
+  stat_cor(cor.coef.name = 'rho', label.x=1.6, label.y=2.6)
 ```
 
 ```{r}
