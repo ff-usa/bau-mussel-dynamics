@@ -19,11 +19,10 @@ str(population)
 ```{r}
 
 # Calculate mean
-mean= (population$i1+ population$i2+ population$i3)/3
-
-A=5
+A=4
+mean= (population$i1+ population$i2+ population$i3)/(3*A)
 # 1st quadrat
-plot(mean/A,
+plot(mean,
      type='b', col='blue',
      xlab='', ylab='Population / m^2', xlim=c(1,12), xaxt='n', lwd=2)
 
@@ -55,15 +54,15 @@ axis(1, at=seq(1,12), population$Month, las=2)
 water=read.csv("data/water-quality.csv")
 str(water)
 
-plot(water$Depth, mean/A,
+plot(water$Depth, mean,
      type='p', col='blue',
      xlab='Depth (m)', ylab='Population / m^2')
 
-plot(water$Temperature, mean/A,
+plot(water$Temperature, mean,
      type='p', col='blue',
      xlab='Temperature °C', ylab='Population / m^2')
 
-plot(water$pH, mean/A,
+plot(water$pH, mean,
      type='p', col='blue',
      xlab='pH', ylab='Population / m^2')
 ```
@@ -79,7 +78,7 @@ library(ggplot2)
 # Month needs to be factorized to facilitate plotting and preserve order
 Month1=factor(water$Month, levels=water$Month)
 df= data.frame(Month=Month1, Depth=water$Depth,
-               Temperature=water$Temperature, pH=water$pH, mean=mean/A)
+               Temperature=water$Temperature, pH=water$pH, mean=mean)
 
 
 scale=6
