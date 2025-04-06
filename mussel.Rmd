@@ -19,7 +19,7 @@ str(population)
 ```{r}
 
 # Calculate mean
-mean= (population$R1+ population$R2+ population$R3)/3
+mean= (population$i1+ population$i2+ population$i3)/3
 
 A=5
 # 1st quadrat
@@ -35,7 +35,7 @@ axis(1, at=seq(1,12), population$Month, las=2, cex.axis = 1)
 
 ```
 ```{r}
-plot(population$R2,
+plot(population$i2,
      type='b', col='blue',
      xlab='', xlim=c(1,12), xaxt='n')
 axis(1, at=seq(1,12), population$Month, las=2)
@@ -43,7 +43,7 @@ axis(1, at=seq(1,12), population$Month, las=2)
 ```
 
 ```{r}
-plot(population$R3,
+plot(population$i3,
      type='b', col='blue',
      xlab='', xlim=c(1,12), xaxt='n')
 axis(1, at=seq(1,12), population$Month, las=2)
@@ -243,15 +243,15 @@ sd(water$Depth)
 ### Analyze quadrat samples using Mann-Whitney U test
 
 ```{r}
-wilcox.test(population$R1, population$R2)
+wilcox.test(population$i1, population$i2)
 ```
 
 ```{r}
-wilcox.test(population$R2, population$R3)
+wilcox.test(population$i2, population$i3)
 ```
 
 ```{r}
-wilcox.test(population$R3, population$R1)
+wilcox.test(population$i3, population$i1)
 ```
 ```{r}
 for (w in c('Depth','Temperature','pH')) {
@@ -261,3 +261,4 @@ for (w in c('Depth','Temperature','pH')) {
 ```
 
 ### End
+
