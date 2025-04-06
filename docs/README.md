@@ -1,6 +1,6 @@
 # bau-mussel-dynamics
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14996735.svg)](https://doi.org/10.5) [![R](https://img.shields.io/badge/R-4.4.2-green.svg)]()
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14996734.svg)](https://doi.org/10.5281/zenodo.14996734) [![R](https://img.shields.io/badge/R-4.4.2-green.svg)]()
 
 ### Table of contents
 
