@@ -24,11 +24,21 @@ library("ggpubr")
 #### Length
 
 ```{r}
-shapiro.test(bio$Shell_Length_mm)
-ggqqplot(bio$Shell_Width_mm, ylab = "Length")
+shapiro.test(bio$Length)
+ggqqplot(bio$Length, ylab = "Length")
 ```
 
 ### Width
 
+```{r}
+shapiro.test(bio$Width)
+ggqqplot(bio$Width, ylab = "Width")
+```
 
 ### Height
+
+```{r}
+shapiro.test(bio$Height)
+ggqqplot(bio$Height, ylab = "Height")
+```
+
