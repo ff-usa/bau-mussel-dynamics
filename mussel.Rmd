@@ -63,20 +63,11 @@ axis(1, at=seq(1,12), population$Month, las=2)
 ### Variation of water quality parameters
 
 ```{r}
-water=read.csv("data/water-quality.csv")
-str(water)
-
-plot(water$Depth, mean,
-     type='p', col='blue',
-     xlab='Depth (m)', ylab='Population / m^2')
-
-plot(water$Temperature, mean,
-     type='p', col='blue',
-     xlab='Temperature °C', ylab='Population / m^2')
-
-plot(water$pH, mean,
-     type='p', col='blue',
-     xlab='pH', ylab='Population / m^2')
+for (w in c('Depth','Temperature','pH')) {
+  arr=water[[w]]
+  cat(sprintf('%15s - mean: %f, sd: %f min: %f, max: %f\n', w, mean(arr), min(arr), max(arr),
+              sd(arr)))
+}
 ```
 
 #### Temperature
@@ -159,12 +150,31 @@ ggplot(data = df, aes(x = Month, group = 1)) +
 
 
 
-### Correlation between mussel population density and water quality paramters
+### Correlation between mussel population density and water quality parameters
+
+#### Plot data points
+```{r}
+water=read.csv("data/water-quality.csv")
+str(water)
+
+plot(water$Depth, mean,
+     type='p', col='blue',
+     xlab='Depth (m)', ylab='Population / m^2')
+
+plot(water$Temperature, mean,
+     type='p', col='blue',
+     xlab='Temperature °C', ylab='Population / m^2')
+
+plot(water$pH, mean,
+     type='p', col='blue',
+     xlab='pH', ylab='Population / m^2')
+```
+
 
 Reference: https://www.sthda.com/english/wiki/correlation-test-between-two-variables-in-r#compute-correlation-in-r
 
 
-#### Computee correlation
+#### Compute correlation
 ```{r}
 for (i in colnames(df)[2:4]) {
   print(i)
@@ -195,6 +205,7 @@ ggscatter(df, x = "Temperature", y = "mean",
   stat_cor(cor.coef.name = 'rho', label.x=20, label.y=4.3, method='spearman',
            size=5, p.accuracy=0.001)
 ```
+
 ```{r}
 library("ggpubr")
 ggscatter(df, x = "pH", y = "mean",
@@ -205,30 +216,7 @@ ggscatter(df, x = "pH", y = "mean",
            size=5, p.accuracy=0.001)
 ```
  
-### Shell biometrics
- 
-```{r}
-bio= read.csv('data/shell-biometrics.csv')
-str(bio)
-``` 
- 
-### Normality test
- 
-<!-- #### Length -->
-<!-- ```{r} -->
-<!-- shapiro.test(bio$Shell_Length_mm) -->
-<!-- ggqqplot(bio$Shell_Width_mm, ylab = "Length") -->
-<!-- ``` -->
-<!-- ###Height -->
-<!-- ```{r} -->
-<!-- shapiro.test(bio$Shell_Height_mm) -->
-<!-- ggqqplot(bio$Shell_Width_mm, ylab = "Height") -->
-<!-- ``` -->
-<!-- ###Width -->
-<!-- ```{r} -->
-<!-- shapiro.test(bio$Shell_Width_mm) -->
-<!-- ggqqplot(bio$Shell_Width_mm, ylab = "Width") -->
-<!-- ``` -->
+
 
 ```{r}
 mean(water$Temperature)
@@ -261,12 +249,7 @@ wilcox.test(population$i2, population$i3)
 ```{r}
 wilcox.test(population$i3, population$i1)
 ```
-```{r}
-for (w in c('Depth','Temperature','pH')) {
-  arr=water[[w]]
-  cat(sprintf('%s - Mean: %f, min: %f, max: %f\n', w, mean(arr), min(arr), max(arr)))
-}
-```
+
 
 ### End
 
