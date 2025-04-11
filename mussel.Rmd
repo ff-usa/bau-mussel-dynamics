@@ -59,6 +59,20 @@ axis(1, at=seq(1,12), population$Month, las=2)
 
 ```
 
+#### Analyze quadrat samples using Mann-Whitney U test
+
+```{r}
+wilcox.test(population$i1, population$i2)
+```
+
+```{r}
+wilcox.test(population$i2, population$i3)
+```
+
+```{r}
+wilcox.test(population$i3, population$i1)
+```
+
 
 ### Variation of water quality parameters
 
@@ -216,39 +230,6 @@ ggscatter(df, x = "pH", y = "mean",
            size=5, p.accuracy=0.001)
 ```
  
-
-
-```{r}
-mean(water$Temperature)
-```
-```{r}
-sd(water$Temperature)
-```
-```{r}
-mean(water$pH)
-```
-```{r}
-sd(water$pH)
-```
-```{r}
-mean(water$Depth)
-```
-```{r}
-sd(water$Depth)
-```
-### Analyze quadrat samples using Mann-Whitney U test
-
-```{r}
-wilcox.test(population$i1, population$i2)
-```
-
-```{r}
-wilcox.test(population$i2, population$i3)
-```
-
-```{r}
-wilcox.test(population$i3, population$i1)
-```
 
 
 ### End
