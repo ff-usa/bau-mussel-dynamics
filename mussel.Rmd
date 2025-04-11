@@ -14,25 +14,35 @@ population=read.csv("data/population.csv")
 str(population)
 ```
 
-### Plot data
+### Variation of mussel population
+
+#### Mean population density
 
 ```{r}
 
 # Calculate mean
 A=4
 mean= (population$i1+ population$i2+ population$i3)/(3*A)
-# 1st quadrat
 plot(mean,
      type='b', col='blue',
      xlab='', ylab='Population / m^2', xlim=c(1,12), xaxt='n', lwd=2)
 
-#legend('top', legend=c('Mean'), col=c('blue'), lwd=c(3), lty=1)
+# legend('top', legend=c('Mean'), col=c('blue'), lwd=c(3), lty=1)
 
 grid()
 axis(1, at=seq(1,12), population$Month, las=2, cex.axis = 1)
 # title('Monthly variation in population density of L. marginalis')
-
 ```
+
+#### Individual quadrat population
+
+```{r}
+plot(population$i1,
+     type='b', col='blue',
+     xlab='', xlim=c(1,12), xaxt='n')
+axis(1, at=seq(1,12), population$Month, las=2)
+```
+
 ```{r}
 plot(population$i2,
      type='b', col='blue',
@@ -48,7 +58,9 @@ plot(population$i3,
 axis(1, at=seq(1,12), population$Month, las=2)
 
 ```
-### Water quality
+
+
+### Variation of water quality parameters
 
 ```{r}
 water=read.csv("data/water-quality.csv")
@@ -67,10 +79,7 @@ plot(water$pH, mean,
      xlab='pH', ylab='Population / m^2')
 ```
 
-
-
-
-### Temperature
+#### Temperature
 
 ```{r}
 library(ggplot2)
@@ -103,7 +112,7 @@ ggplot(data = df, aes(x = Month, group = 1)) +
 ```
 
 
-### Depth
+#### Depth
 
 ```{r}
 scale=1
@@ -126,7 +135,7 @@ ggplot(data = df, aes(x = Month, group = 1)) +
 ```
 
 
-### pH
+#### pH
 
 ```{r}
 scale=2
@@ -150,22 +159,22 @@ ggplot(data = df, aes(x = Month, group = 1)) +
 
 
 
-### Correlation
+### Correlation between mussel population density and water quality paramters
 
 Reference: https://www.sthda.com/english/wiki/correlation-test-between-two-variables-in-r#compute-correlation-in-r
 
 
+#### Computee correlation
 ```{r}
 for (i in colnames(df)[2:4]) {
   print(i)
   print(cor.test(df[[i]], mean, method='spearman'))
   cat(sprintf('\n'))
 }
-
 ```
 
 
-### Visualize correlation
+#### Visualize correlation
 
 ```{r}
 library("ggpubr")
@@ -196,7 +205,7 @@ ggscatter(df, x = "pH", y = "mean",
            size=5, p.accuracy=0.001)
 ```
  
-### Load data
+### Shell biometrics
  
 ```{r}
 bio= read.csv('data/shell-biometrics.csv')
