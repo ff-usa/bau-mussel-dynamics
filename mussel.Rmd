@@ -1,6 +1,10 @@
 ---
-title: "mussel"
-output: html_document
+title: "Population Estimation of Freshwater Pearl Mussel Using Quadrat Method"
+output:
+  html_document:
+    toc: true
+    number_sections: true
+    theme: cosmo
 ---
 
 ```{r setup, include=FALSE}
