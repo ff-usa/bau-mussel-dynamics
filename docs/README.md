@@ -9,7 +9,6 @@
   * [Study site](#study-site)
   * [Monthly population variation of freshwater pearl mussel](#monthly-population-variation-of-freshwater-pearl-mussel)
   * [Strong correlation between population and depth of pond](#strong-correlation-between-population-and-depth-of-pond)
-  * [Normality of shell dimensions](#normality-of-shell-dimensions)
 
 ### Description
 
@@ -38,6 +37,10 @@ Culture pond and quadrats
 
 ---
 
+### Data
+
+TBD
+
 ### Monthly population variation of freshwater pearl mussel
 
 ![](population.png)
@@ -50,12 +53,4 @@ Population density is minimum in September and maximum in April.
 
 ![](corr_population_depth.png)
 
-p<0.05 indicates significant correlation.
-
----
-
-### Normality of shell dimensions
-
-![](qqplot_length.png)
-
-The Shapiro-Wilk test statistics is W = 0.95837, p = 0.7603. The Q-Q plot and p>0.05 indicate normal distribution.
+p<0.001 indicates significant correlation.
