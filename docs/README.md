@@ -4,13 +4,14 @@
 
 ### Table of contents
 
-  * [Description](#description)
+  * [Introduction](#introduction)
   * [Citation](#citation)
   * [Study site](#study-site)
+  * [Data description](#data-description)
   * [Monthly population variation of freshwater pearl mussel](#monthly-population-variation-of-freshwater-pearl-mussel)
   * [Strong correlation between population and depth of pond](#strong-correlation-between-population-and-depth-of-pond)
 
-### Description
+### Introduction
 
 (This webpage will be completed after finalizing the manuscript)
 
@@ -37,7 +38,7 @@ Culture pond and quadrats
 
 ---
 
-### Data
+### Data description
 
 TBD
 
