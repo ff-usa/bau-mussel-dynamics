@@ -13,9 +13,23 @@
 
 ### Introduction
 
-(This webpage will be completed after finalizing the manuscript)
+Freshwater pearl mussel *Lamellidens marginalis* is a commercially
+important aquatic species in Bangladesh. But little research has been
+done about the seasonality of its yield. We conducted a year-long
+study at a culture pond in Bangladesh to understand the temporal
+variation of mussel population. We used quadrat sampling method
+to estimate the natural population of *L. marginalis* in the lentic habitat.
+Thereby, we tried to establish the months of minimum and maximum mussel yields.
+Simultaneously, we recorded a few water quality parameters to assess their
+impacts on mussel growth.
+
+Our collected data of mussel samples, their biometric measurements, and
+concomitant water quality parameters are released via this GitHub repository.
+Moreover, we made all our R codes available to facilitate future
+fisheries management research.
 
 Webpage: https://ff-usa.github.io/bau-mussel-dynamics/
+R notebook: https://ff-usa.github.io/bau-mussel-dynamics/mussel.html
 
 ### Citation
 
