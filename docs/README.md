@@ -10,6 +10,7 @@
   * [Data description](#data-description)
   * [Monthly population variation of freshwater pearl mussel](#monthly-population-variation-of-freshwater-pearl-mussel)
   * [Strong correlation between population and depth of pond](#strong-correlation-between-population-and-depth-of-pond)
+  * [R notebook](#r-notebook)
 
 ### Introduction
 
@@ -29,8 +30,6 @@ Moreover, we made all our R codes available here to facilitate future
 fisheries management research.
 
 Webpage: https://ff-usa.github.io/bau-mussel-dynamics/
-
-R notebook: https://ff-usa.github.io/bau-mussel-dynamics/mussel.html
 
 ### Citation
 
@@ -86,3 +85,9 @@ Population density is minimum in September and maximum in April.
 ![](corr_population_depth.png)
 
 p<0.001 indicates significant correlation.
+
+### R notebook
+
+Detailed data analysis can be found in the following notebook:
+
+https://ff-usa.github.io/bau-mussel-dynamics/mussel.html
