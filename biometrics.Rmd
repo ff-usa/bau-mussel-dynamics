@@ -14,6 +14,15 @@ bio= read.csv('data/shell-biometrics.csv')
 str(bio)
 ```
 
+### Explore data
+
+```{r}
+for (w in c('Length','Width','Height')) {
+  arr=bio[[w]]
+  cat(sprintf('%15s - mean: %f, sd: %f min: %f, max: %f\n', w, mean(arr), min(arr), max(arr),
+              sd(arr)))
+}
+```
 
 ### Normality test
 
@@ -28,13 +37,6 @@ shapiro.test(bio$Length)
 ggqqplot(bio$Length, ylab = "Length")
 ```
 
-```{r}
-for (w in c('Length','Width','Height')) {
-  arr=bio[[w]]
-  cat(sprintf('%15s - mean: %f, sd: %f min: %f, max: %f\n', w, mean(arr), min(arr), max(arr),
-              sd(arr)))
-}
-```
 ### Width
 
 ```{r}
