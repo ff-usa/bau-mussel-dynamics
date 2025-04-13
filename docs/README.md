@@ -21,7 +21,7 @@ Webpage: https://ff-usa.github.io/bau-mussel-dynamics/
 
 If you use this data, please cite as below:
 
-Fouzia Fariha, Tashrif Billah, Bishjiet Chandro, Md. Masud Rana, Md. Jasim Uddin, Freshwater pearl mussel population dynamics data by Bangladesh Agricultural University, 2024, DOI: 10.5281/zenodo.14996735
+Fouzia Fariha, Tashrif Billah, Bishjiet Chandro, Md. Masud Rana, Md. Jasim Uddin, Freshwater pearl mussel population dynamics data by Bangladesh Agricultural University, 2024, DOI: 10.5281/zenodo.14996734
 
 ---
 
