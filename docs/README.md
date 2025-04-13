@@ -40,8 +40,6 @@ Culture pond and quadrats
 
 ### Monthly population variation of freshwater pearl mussel
 
-The three quadrats are denoted by i<sub>1</sub>, i<sub>2</sub>, i<sub>3</sub>
-
 ![](population.png)
 
 Population density is minimum in September and maximum in April.
