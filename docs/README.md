@@ -25,10 +25,11 @@ impacts on mussel growth.
 
 Our collected data of mussel samples, their biometric measurements, and
 concomitant water quality parameters are released via this GitHub repository.
-Moreover, we made all our R codes available to facilitate future
+Moreover, we made all our R codes available here to facilitate future
 fisheries management research.
 
 Webpage: https://ff-usa.github.io/bau-mussel-dynamics/
+
 R notebook: https://ff-usa.github.io/bau-mussel-dynamics/mussel.html
 
 ### Citation
