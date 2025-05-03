@@ -10,6 +10,7 @@
   * [Data description](#data-description)
   * [Monthly population variation of freshwater pearl mussel](#monthly-population-variation-of-freshwater-pearl-mussel)
   * [Strong correlation between population and depth of pond](#strong-correlation-between-population-and-depth-of-pond)
+  * [R notebook](#r-notebook)
 
 ### Introduction
 
@@ -29,8 +30,6 @@ Moreover, we made all our R codes available here to facilitate future
 fisheries management research.
 
 Webpage: https://ff-usa.github.io/bau-mussel-dynamics/
-
-R notebook: https://ff-usa.github.io/bau-mussel-dynamics/mussel.html
 
 ### Citation
 
@@ -55,7 +54,7 @@ Culture pond and quadrats
 
 ### Data description
 
-Data have been made available in three files:
+Collected data have been made available in three files:
 
 * population.csv
 * water-quality.csv
@@ -66,8 +65,8 @@ There is a `Month` column in each file. Other columns and their
 units are noted below:
 
 | File | Columns | Unit | Description |
----
-| population.csv | i1, i2, i3 | units | Number of mussels sampled in quadrats i1,i2,i3 |
+| - | - | - | - |
+| population.csv | i1, i2, i3 | | Number of mussels sampled in quadrats i1, i2, i3 |
 | water-quality.csv | Depth | meter | Average depth of three quadrats |
 | water-quality.csv | Temperature | °C | Temperature of pond water |
 | water-quality.csv | pH | | pH of pond water |
@@ -86,3 +85,9 @@ Population density is minimum in September and maximum in April.
 ![](corr_population_depth.png)
 
 p<0.001 indicates significant correlation.
+
+### R notebook
+
+Detailed data analysis can be found in the following notebook:
+
+https://ff-usa.github.io/bau-mussel-dynamics/mussel.html
