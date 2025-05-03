@@ -471,12 +471,12 @@ quality parameters</h3>
 <pre class="r"><code>water=read.csv(&quot;data/water-quality.csv&quot;)
 for (w in c(&#39;Depth&#39;,&#39;Temperature&#39;,&#39;pH&#39;)) {
   arr=water[[w]]
-  cat(sprintf(&#39;%15s - mean: %f, sd: %f min: %f, max: %f\n&#39;, w, mean(arr), min(arr), max(arr),
-              sd(arr)))
+  cat(sprintf(&#39;%15s - mean: %f, sd: %f min: %f, max: %f\n&#39;, w, mean(arr), sd(arr),
+              min(arr), max(arr)))
 }</code></pre>
-<pre><code>##           Depth - mean: 1.506667, sd: 1.150000 min: 2.100000, max: 0.295030
-##     Temperature - mean: 23.589167, sd: 15.670000 min: 27.350000, max: 3.712300
-##              pH - mean: 7.367500, sd: 6.410000 min: 7.720000, max: 0.452611</code></pre>
+<pre><code>##           Depth - mean: 1.506667, sd: 0.295030 min: 1.150000, max: 2.100000
+##     Temperature - mean: 23.589167, sd: 3.712300 min: 15.670000, max: 27.350000
+##              pH - mean: 7.367500, sd: 0.452611 min: 6.410000, max: 7.720000</code></pre>
 <div id="temperature" class="section level4" number="3.1">
 <h4><span class="header-section-number">3.1</span> Temperature</h4>
 <pre class="r"><code>library(ggplot2)
