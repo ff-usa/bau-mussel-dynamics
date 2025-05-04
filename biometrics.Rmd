@@ -50,4 +50,11 @@ ggqqplot(bio$Width, ylab = "Width")
 shapiro.test(bio$Height)
 ggqqplot(bio$Height, ylab = "Height")
 ```
-
+### Biomass Exploration
+```{r}
+for (w in c('Wet_Tissue_Weight','Dry_Shell_Weight')) {
+  arr=bio[[w]]
+  cat(sprintf('%15s - mean: %f, sd: %f min: %f, max: %f\n', w, mean(arr), sd(arr), min(arr), 
+              max(arr)))
+}
+```
