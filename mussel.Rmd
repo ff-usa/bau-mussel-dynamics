@@ -84,8 +84,8 @@ wilcox.test(population$i3, population$i1)
 water=read.csv("data/water-quality.csv")
 for (w in c('Depth','Temperature','pH')) {
   arr=water[[w]]
-  cat(sprintf('%15s - mean: %f, sd: %f min: %f, max: %f\n', w, mean(arr), min(arr), max(arr),
-              sd(arr)))
+  cat(sprintf('%15s - mean: %f, sd: %f min: %f, max: %f\n', w, mean(arr), sd(arr),
+              min(arr), max(arr)))
 }
 ```
 
