@@ -27,6 +27,7 @@ str(population)
 # Calculate mean
 a=4
 mean= (population$i1+ population$i2+ population$i3)/(3*a)
+tiff("docs/Fig_1.tiff", height=3, width=5, units='in', res=600)
 par(mar=c(5, 4.5, 1, 1))
 plot(mean,
      type='b', col='blue',
@@ -36,6 +37,7 @@ plot(mean,
 
 axis(1, at=seq(1,12), population$Month, las=2, cex.axis = 1)
 # title('Monthly variation in population density of L. marginalis')
+dev.off()
 ```
 
 #### Individual quadrat population
