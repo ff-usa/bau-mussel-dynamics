@@ -27,7 +27,7 @@ str(population)
 # Calculate mean
 a=4
 mean= (population$i1+ population$i2+ population$i3)/(3*a)
-tiff("docs/Fig_3.tiff", height=3, width=5, units='in', res=600)
+# tiff("docs/Fig_3.tiff", height=3, width=5, units='in', res=600)
 par(mar=c(5, 4.5, 1, 1))
 plot(mean,
      type='b', col='blue',
@@ -37,7 +37,7 @@ plot(mean,
 
 axis(1, at=seq(1,12), population$Month, las=2, cex.axis = 1)
 # title('Monthly variation in population density of L. marginalis')
-dev.off()
+# dev.off()
 ```
 
 #### Individual quadrat population
@@ -207,38 +207,37 @@ for (i in colnames(df)[2:4]) {
 
 #### Visualize correlation
 
-```{r}
+```{r, fig.height=9, fig.width=5}
 library("ggpubr")
-tiff("docs/Fig_4.tiff", height=3, width=5, units='in', res=600)
-ggscatter(df, x = "Depth", y = "mean",
+# tiff("docs/Fig_4.tiff", height=9, width=5, units='in', res=600)
+figA= ggscatter(df, x = "Depth", y = "mean",
           add = "reg.line", conf.int = TRUE,
-          # xlab = "Depth (m)", ylab = "Population / m^2",
           xlab = "Depth (m)",
           title = 'A') +
   labs(y=expression(Population~density~(no./m^2))) +
   stat_cor(cor.coef.name = 'rho', label.x=1.5, label.y=3.5, method='spearman',
            size=5, p.accuracy=0.001)
-dev.off()
-```
 
-```{r}
-library("ggpubr")
-ggscatter(df, x = "Temperature", y = "mean",
+
+figB= ggscatter(df, x = "Temperature", y = "mean",
           add = "reg.line", conf.int = TRUE,
-          xlab = "Temperature (°C)", ylab = "Population / m^2",
+          xlab = "Temperature (°C)",
           title = 'B') +
+  labs(y=expression(Population~density~(no./m^2))) +
   stat_cor(cor.coef.name = 'rho', label.x=20, label.y=4.3, method='spearman',
            size=5, p.accuracy=0.001)
-```
 
-```{r}
-library("ggpubr")
-ggscatter(df, x = "pH", y = "mean",
+
+figC= ggscatter(df, x = "pH", y = "mean",
           add = "reg.line", conf.int = TRUE,
-          xlab = "pH", ylab = "Population / m^2",
+          xlab = "pH",
           title = 'C') +
+  labs(y=expression(Population~density~(no./m^2))) +
   stat_cor(cor.coef.name = 'rho', label.x=6.9, label.y=4.3, method='spearman',
            size=5, p.accuracy=0.001)
+
+plot_grid(figA, figB, figC, ncol=1, align = "v")
+# dev.off()
 ```
  
 
