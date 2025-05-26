@@ -27,7 +27,7 @@ str(population)
 # Calculate mean
 a=4
 mean= (population$i1+ population$i2+ population$i3)/(3*a)
-par(mar=c(5, 4.5, 0, 0))
+par(mar=c(5, 4.5, 1, 1))
 plot(mean,
      type='b', col='blue',
      xlab='', ylab=expression(Population~density~(no./m^2)), xlim=c(1,12), xaxt='n', lwd=2)
