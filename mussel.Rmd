@@ -211,8 +211,10 @@ for (i in colnames(df)[2:4]) {
 library("ggpubr")
 ggscatter(df, x = "Depth", y = "mean",
           add = "reg.line", conf.int = TRUE,
-          xlab = "Depth (m)", ylab = "Population / m^2",
+          # xlab = "Depth (m)", ylab = "Population / m^2",
+          xlab = "Depth (m)",
           title = 'A') +
+  labs(y=expression(Population~density~(no./m^2))) +
   stat_cor(cor.coef.name = 'rho', label.x=1.5, label.y=3.5, method='spearman',
            size=5, p.accuracy=0.001)
 ```
