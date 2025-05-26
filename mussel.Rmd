@@ -27,7 +27,7 @@ str(population)
 # Calculate mean
 a=4
 mean= (population$i1+ population$i2+ population$i3)/(3*a)
-tiff("docs/Fig_1.tiff", height=3, width=5, units='in', res=600)
+tiff("docs/Fig_3.tiff", height=3, width=5, units='in', res=600)
 par(mar=c(5, 4.5, 1, 1))
 plot(mean,
      type='b', col='blue',
@@ -209,6 +209,7 @@ for (i in colnames(df)[2:4]) {
 
 ```{r}
 library("ggpubr")
+tiff("docs/Fig_4.tiff", height=3, width=5, units='in', res=600)
 ggscatter(df, x = "Depth", y = "mean",
           add = "reg.line", conf.int = TRUE,
           # xlab = "Depth (m)", ylab = "Population / m^2",
@@ -217,6 +218,7 @@ ggscatter(df, x = "Depth", y = "mean",
   labs(y=expression(Population~density~(no./m^2))) +
   stat_cor(cor.coef.name = 'rho', label.x=1.5, label.y=3.5, method='spearman',
            size=5, p.accuracy=0.001)
+dev.off()
 ```
 
 ```{r}
