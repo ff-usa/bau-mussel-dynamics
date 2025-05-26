@@ -25,15 +25,15 @@ str(population)
 ```{r}
 
 # Calculate mean
-A=4
-mean= (population$i1+ population$i2+ population$i3)/(3*A)
+a=4
+mean= (population$i1+ population$i2+ population$i3)/(3*a)
+par(mar=c(5, 4.5, 0, 0))
 plot(mean,
      type='b', col='blue',
-     xlab='', ylab='Population / m^2', xlim=c(1,12), xaxt='n', lwd=2)
+     xlab='', ylab=expression(Population~density~(no./m^2)), xlim=c(1,12), xaxt='n', lwd=2)
 
 # legend('top', legend=c('Mean'), col=c('blue'), lwd=c(3), lty=1)
 
-grid()
 axis(1, at=seq(1,12), population$Month, las=2, cex.axis = 1)
 # title('Monthly variation in population density of L. marginalis')
 ```
