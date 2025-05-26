@@ -209,6 +209,7 @@ for (i in colnames(df)[2:4]) {
 
 ```{r, fig.height=9, fig.width=5}
 library("ggpubr")
+library(cowplot)
 # tiff("docs/Fig_4.tiff", height=9, width=5, units='in', res=600)
 figA= ggscatter(df, x = "Depth", y = "mean",
           add = "reg.line", conf.int = TRUE,
