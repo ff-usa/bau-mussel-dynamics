@@ -66,7 +66,7 @@ units are noted below:
 
 | File | Columns | Unit | Description |
 | - | - | - | - |
-| population.csv | i1, i2, i3 | | Number of mussels sampled in quadrats i1, i2, i3 |
+| population.csv | i<sub>1</sub>, i<sub>2</sub>, i<sub>3</sub> | | Number of mussels sampled in quadrats i<sub>1</sub>, i<sub>2</sub>, i<sub>3</sub> |
 | water-quality.csv | Depth | meter | Average depth of three quadrats |
 | water-quality.csv | Temperature | °C | Temperature of pond water |
 | water-quality.csv | pH | | pH of pond water |
