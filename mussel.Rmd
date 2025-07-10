@@ -65,6 +65,12 @@ axis(1, at=seq(1,12), population$Month, las=2)
 
 ```
 
+#### Analyze quadrat samples using Kruskal-Wallis test
+
+```{r}
+kruskal.test(subset(population, select=c(2:9)))
+```
+
 #### Analyze quadrat samples using Mann-Whitney U test
 
 ```{r}
