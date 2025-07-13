@@ -49,21 +49,6 @@ plot(population$i1,
 axis(1, at=seq(1,12), population$Month, las=2)
 ```
 
-```{r}
-plot(population$i2,
-     type='b', col='blue',
-     xlab='', xlim=c(1,12), xaxt='n')
-axis(1, at=seq(1,12), population$Month, las=2)
-
-```
-
-```{r}
-plot(population$i3,
-     type='b', col='blue',
-     xlab='', xlim=c(1,12), xaxt='n')
-axis(1, at=seq(1,12), population$Month, las=2)
-
-```
 
 #### Analyze quadrat samples using Kruskal-Wallis test
 
