@@ -73,6 +73,9 @@ kruskal.test(subset(population, select=c(2:9)))
 
 #### Analyze quadrat samples using Mann-Whitney U test
 
+There are 28 pairs of samples from 8 quadrats (8C2=28). Testing each pair is laborious.
+So we test first three pairs for practice.
+
 ```{r}
 wilcox.test(population$i1, population$i2)
 ```
