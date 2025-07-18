@@ -26,7 +26,7 @@ str(population)
 
 # Calculate mean
 a=4
-mean= (population$i1+ population$i2+ population$i3)/(3*a)
+mean= (population$i1+ population$i2+ population$i3+ population$i4+ population$i5+ population$i6+ population$i7+ population$i8)/(8*a)
 # tiff("docs/Fig_3.tiff", height=3, width=5, units='in', res=600)
 par(mar=c(5, 4.5, 1, 1))
 plot(mean,
@@ -49,23 +49,17 @@ plot(population$i1,
 axis(1, at=seq(1,12), population$Month, las=2)
 ```
 
-```{r}
-plot(population$i2,
-     type='b', col='blue',
-     xlab='', xlim=c(1,12), xaxt='n')
-axis(1, at=seq(1,12), population$Month, las=2)
 
-```
+#### Analyze quadrat samples using Kruskal-Wallis test
 
 ```{r}
-plot(population$i3,
-     type='b', col='blue',
-     xlab='', xlim=c(1,12), xaxt='n')
-axis(1, at=seq(1,12), population$Month, las=2)
-
+kruskal.test(subset(population, select=c(2:9)))
 ```
 
 #### Analyze quadrat samples using Mann-Whitney U test
+
+There are 28 pairs of samples from 8 quadrats (8C2=28). Testing each pair is laborious.
+So we test first three pairs for practice.
 
 ```{r}
 wilcox.test(population$i1, population$i2)

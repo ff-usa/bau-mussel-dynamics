@@ -82,7 +82,7 @@ Population density is minimum in September and maximum in April.
 
 ### Strong correlation between population and depth of pond
 
-![](corr_population_depth.png)
+![](correlation.png)
 
 p<0.001 indicates significant correlation.
 
