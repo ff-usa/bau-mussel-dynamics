@@ -27,15 +27,17 @@ str(population)
 # Calculate mean
 a=4
 mean= (population$i1+ population$i2+ population$i3+ population$i4+ population$i5+ population$i6+ population$i7+ population$i8)/(8*a)
-# tiff("docs/Fig_3.tiff", height=3, width=5, units='in', res=600)
-par(mar=c(5, 4.5, 1, 1))
+# tiff("docs/Fig_3.tiff", height=4, width=6, units='in', res=300)
+par(mar=c(6, 4.5, 1, 1))
+magnify=1.2
 plot(mean,
      type='b', col='blue',
-     xlab='', ylab=expression(Population~density~(no./m^2)), xlim=c(1,12), xaxt='n', lwd=2)
+     xlab='', ylab=expression(Population~density~(no./m^2)), xlim=c(1,12), xaxt='n', lwd=2,
+     cex.axis = magnify, cex.lab = magnify)
 
 # legend('top', legend=c('Mean'), col=c('blue'), lwd=c(3), lty=1)
 
-axis(1, at=seq(1,12), population$Month, las=2, cex.axis = 1)
+axis(1, at=seq(1,12), population$Month, las=2, cex.axis = magnify)
 # title('Monthly variation in population density of L. marginalis')
 # dev.off()
 ```
@@ -204,7 +206,7 @@ for (i in colnames(df)[2:4]) {
 ```{r, fig.height=9, fig.width=5}
 library("ggpubr")
 library(cowplot)
-# tiff("docs/Fig_4.tiff", height=9, width=5, units='in', res=600)
+# tiff("docs/Fig_4.tiff", height=9, width=5, units='in', res=300)
 figA= ggscatter(df, x = "Depth", y = "mean",
           add = "reg.line", conf.int = TRUE,
           xlab = "Depth (m)",
